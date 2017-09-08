@@ -5,6 +5,7 @@ The library supports validating and formatting post codes for UK.
 """
 
 import re
+import sys
 import unittest
 
 
@@ -36,3 +37,17 @@ def format_code(code):
     # Only the last 3 letters
     inw_code = code[-3:].strip()
     return '{} {}'.format(out_code, inw_code)
+
+
+if __name__ == '__main__':
+    # Minimalistic command line app
+    # Grab the last param and consider it to be a postcode
+    code = sys.argv[-1]
+    if not code.endswith('.py'):
+        code = format_code(code)
+        print('\nFormatted code ::', code)
+        valid = 'valid' if validate_code(code) else 'invalid'
+        print('The code is {}.\n'.format(valid))
+    else:
+        print('\nYou must provide a post-code, '
+              'to be formatted and validated.\n')
