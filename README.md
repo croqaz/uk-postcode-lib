@@ -5,11 +5,16 @@
 
 ---
 
+This library includes the post-codes from the Code-Point Open data, august 2017.
+
+To update the data, you must download the archive from OS Code-Point Open, or Doogal GB, extract it the folder `CSV` and run the `csv_to_list.py` script.
+
+
 Motivation: Regex validation is hard to maintain and only goes so far. There are no libraries for checking that the post-code is `postally` valid.
 
 Free database:
 
-* [OS Code-Point Open post-codes](https://www.ordnancesurvey.co.uk/business-and-government/products/code-point-open.html) (new)
+* [OS Code-Point Open post-codes](https://www.ordnancesurvey.co.uk/business-and-government/products/code-point-open.html) (updated quarterly: February, May, August and November)
 * [Doogal GB Postcodes](https://www.doogal.co.uk/UKPostcodes.php) (older data)
 
 Resources:
