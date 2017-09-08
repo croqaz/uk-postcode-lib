@@ -10,7 +10,7 @@ import unittest
 
 
 # Naive regex validation
-CODE_REGEX = '[A-PR-UWYZ](([A-HK-Y]?\d\d?)|(\d[A-HJKPSTUW])|'\
+CODE_REGEX = '(GIR 0A{2})|[A-PR-UWYZ](([A-HK-Y]?\d\d?)|(\d[A-HJKPSTUW])|'\
     '([A-HK-Y]\d[ABEHMNPRV-Y]))[ ]?\d[ABD-HJLNP-UW-Z]{2}'
 VALID_CODE = re.compile('^{}$'.format(CODE_REGEX), re.I)
 

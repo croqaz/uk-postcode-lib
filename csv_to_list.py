@@ -32,8 +32,9 @@ def csv_to_list():
     with open(f'{BASE_DIR}/{OUTPUT_TXT}', 'w') as output:
         output.write(dump)
 
+    # 1,696,113 codes, 12.63 MB file
     print(f'Stat :: {len(postcodes):,} codes, '
-          ' {len(dump)/1000_000:,.2f} MB file.')
+          f'{len(dump)/1000_000:,.2f} MB file.')
 
 
 if __name__ == '__main__':

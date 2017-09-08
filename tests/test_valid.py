@@ -3,13 +3,21 @@ import pytest
 import postcode
 
 positive_values = [
-    'EC1A 1BB',     # special case 1
-    'W1A 0AX',      # special case 2
-    'ec1a 1bb',     # all lower
-    'M1 1AE', 'B33 8TH',
-    'CR2 6XH', 'DN55 1PT',
-    'PO16 7GZ', 'GU16 7HF',
-    'BX1 1LT', 'W1K 7AA',
+    'ec1a 1bb', # all lower
+    'EC1A 1BB', # special cases
+    'W1A 0AX',
+    'BS98 1TL',
+    'BX1 1LT',
+    'CF10 1BH',
+    'CV4 8UW',
+    'DA1 1RT',
+    'SW1W 0NY', # normal
+    'M1 1AE',
+    'B33 8TH',
+    'CR2 6XH',
+    'DN55 1PT',
+    'PO16 7GZ',
+    'GU16 7HF'
 ]
 
 negative_values = [
@@ -32,8 +40,8 @@ negative_values = [
     '11 1AA',    # Missing letter in 1st group
     'AA1 1A',    # Missing letter in 2nd group
     'AA1 1',     # Missing letter in 2nd group
+    # 'AB1 1AA' # The infamous
 ]
-# 'AB1 1AA']
 
 
 @pytest.fixture(params=positive_values)
