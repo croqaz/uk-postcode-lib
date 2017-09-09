@@ -18,4 +18,5 @@ def ugly_value(request):
 
 def test_formatting(ugly_value):
     nice = postcode.format_code(ugly_value)
-    assert postcode.validate_code(nice)
+    assert postcode.naive_validation(nice),\
+        'Code validation failed'
