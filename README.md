@@ -7,12 +7,64 @@
 
 This library includes the post-codes from the Code-Point Open data, august 2017.
 
-To update the data, you must download the archive from OS Code-Point Open, or Doogal GB, extract it the folder `CSV` and run the `csv_to_list.py` script.
+To update the data, you must download the archive from OS Code-Point Open, or Doogal GB, extract it the folder `CSV` and run the `csv_to_dict.py` script.
 
 
 Motivation: Regex validation is hard to maintain and only goes so far. There are no libraries for checking that the post-code is `postally` valid.
 
-Free database:
+
+## Usage
+
+### As a command line app
+
+Format and validate a post-code:
+
+    python3.6 postcode "M1 1AE"
+
+
+### As a python library
+
+### `postcode.format_code(code: str, join: bool=True)`
+
+This function returns a string, or a tuple, depending if the `join` param is True.
+
+Example:
+
+    > import postcode
+    > postcode.format_code('M11ae')
+    # M1 1AE
+    > postcode.format_code('w1k 7aa')
+    # W1K 7AA
+    > postcode.format_code('ab11aa', join=False)
+    # ('AB1', '1AA')
+
+### `postcode.naive_validation(code: str) -> bool`
+
+This function validates a code, using a REGEX. The code is not guaranteed to be postally valid.
+
+Example:
+
+    > postcode.naive_validation('M1 1AE')
+    # True
+    > postcode.naive_validation('ab11aa')
+    # True
+    > postcode.naive_validation('A 1AA') # No digit in 1st group
+    # False
+
+### `postcode.validate_code(code: str) -> bool`
+
+This function validates a code, using the database. Before calling it, you must call the `load_database()` function.
+
+Example:
+
+    > postcode.load_database()
+    > postcode.validate_code('M1 1AE')
+    # True
+    > postcode.validate_code('AB11AA')
+    # False
+
+
+Free database downloads:
 
 * [OS Code-Point Open post-codes](https://www.ordnancesurvey.co.uk/business-and-government/products/code-point-open.html) (updated quarterly: February, May, August and November)
 * [Doogal GB Postcodes](https://www.doogal.co.uk/UKPostcodes.php) (older data)
