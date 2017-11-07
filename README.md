@@ -12,6 +12,8 @@ To update the data, you must download the archive from OS Code-Point Open, or Do
 
 Motivation: Regex validation is hard to maintain and only goes so far. There are no libraries for checking that the post-code is `postally` valid.
 
+**Note**: This library is just as good as the database included in it. If some post-codes are missing, or are deprecated, it's because I'm using free data.
+
 
 ## Usage
 

@@ -31,7 +31,7 @@ def csv_to_dict():
     with open(f'{BASE_DIR}/{OUTPUT_TXT}', 'w') as output:
         json.dump(postcodes, output, indent=2, sort_keys=True)
 
-    # 1,696,113 codes, 6.5 MB file
+    # 1,698,194 codes, 6.5 MB file
     print(f'Stat :: {codesnr:,} codes.')
 
 

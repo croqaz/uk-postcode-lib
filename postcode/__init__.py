@@ -34,10 +34,10 @@ def load_database(db_name='post_optim.txt'):
     The database will be converted to a dict, containing sets.
     """
     global postcodes
+    postcodes = {}
     with open(f'{BASE_DIR}/{db_name}') as infile:
-        postcodes = json.load(infile)
-    for key, val in postcodes.items():
-        postcodes[key] = set(val.split(','))
+        for key, val in json.load(infile).items():
+            postcodes[key.encode('utf')] = set(val.encode('utf').split(b','))
 
 
 def validate_code(code: str) -> bool:
@@ -48,7 +48,7 @@ def validate_code(code: str) -> bool:
     Output: a boolean.
     """
     out_code, inw_code = format_code(code, join=False)
-    return inw_code in postcodes.get(out_code, [])
+    return inw_code.encode('utf') in postcodes.get(out_code.encode('utf'), [])
 
 
 def naive_validation(code: str) -> bool:
