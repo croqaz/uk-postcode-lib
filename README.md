@@ -5,7 +5,7 @@
 
 ---
 
-This library includes the post-codes from the Code-Point Open data, august 2017.
+This library includes the post-codes from the Code-Point Open data, november 2017.
 
 To update the data, you must download the archive from OS Code-Point Open, or Doogal GB, extract it the folder `CSV` and run the `csv_to_dict.py` script.
 
@@ -21,7 +21,7 @@ Motivation: Regex validation is hard to maintain and only goes so far. There are
 
 Format and validate a post-code:
 
-    python3.6 postcode "M1 1AE"
+    $ python3.6 postcode "M1 1AE"
 
 
 ### As a python library
@@ -32,13 +32,16 @@ This function returns a string, or a tuple, depending if the `join` param is Tru
 
 Example:
 
-    > import postcode
-    > postcode.format_code('M11ae')
-    # M1 1AE
-    > postcode.format_code('w1k 7aa')
-    # W1K 7AA
-    > postcode.format_code('ab11aa', join=False)
-    # ('AB1', '1AA')
+```python
+import postcode
+
+postcode.format_code('M11ae')
+# M1 1AE
+postcode.format_code('w1k 7aa')
+# W1K 7AA
+postcode.format_code('ab11aa', join=False)
+# ('AB1', '1AA')
+```
 
 ### `postcode.naive_validation(code: str) -> bool`
 
@@ -46,12 +49,14 @@ This function validates a code, using a REGEX. The code is not guaranteed to be 
 
 Example:
 
-    > postcode.naive_validation('M1 1AE')
-    # True
-    > postcode.naive_validation('ab11aa')
-    # True
-    > postcode.naive_validation('A 1AA') # No digit in 1st group
-    # False
+```python
+postcode.naive_validation('M1 1AE')
+# True
+postcode.naive_validation('ab11aa')
+# True
+postcode.naive_validation('A 1AA') # No digit in 1st group
+# False
+```
 
 ### `postcode.validate_code(code: str) -> bool`
 
@@ -59,11 +64,14 @@ This function validates a code, using the database. Before calling it, you must 
 
 Example:
 
-    > postcode.load_database()
-    > postcode.validate_code('M1 1AE')
-    # True
-    > postcode.validate_code('AB11AA')
-    # False
+```python
+postcode.load_database()
+
+postcode.validate_code('M1 1AE')
+# True
+postcode.validate_code('AB11AA')
+# False
+```
 
 
 Free database downloads:
