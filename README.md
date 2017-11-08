@@ -1,13 +1,14 @@
 
 # UK-postcode-lib
+[![Build Status](https://travis-ci.org/croqaz/uk-postcode-lib.svg?branch=master)](https://travis-ci.org/croqaz/uk-postcode-lib) ![Python 3.6](https://img.shields.io/badge/python-3.6-blue.svg) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 #### Simple UK post-code validation and formatting.
 
 ---
 
-This library includes the post-codes from the Code-Point Open data, november 2017.
+This library includes the post-codes from the *Code-Point Open data*, november 2017.
 
-To update the data, you must download the archive from OS Code-Point Open, or Doogal GB, extract it the folder `CSV` and run the `csv_to_dict.py` script.
+To update the data, you must download the archive from OS Code-Point Open, or Doogal GB, extract it the folder `CSV` and run the `import_csv.py` script.
 
 
 Motivation: Regex validation is hard to maintain and only goes so far. There are no libraries for checking that the post-code is `postally` valid.
@@ -73,6 +74,7 @@ postcode.validate_code('AB11AA')
 # False
 ```
 
+-----
 
 Free database downloads:
 
