@@ -1,6 +1,6 @@
 
 # UK-postcode-lib
-[![Build Status](https://travis-ci.org/croqaz/uk-postcode-lib.svg?branch=master)](https://travis-ci.org/croqaz/uk-postcode-lib) ![Python 3.6](https://img.shields.io/badge/python-3.6-blue.svg) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Build Status](https://travis-ci.org/croqaz/uk-postcode-lib.svg?branch=master)](https://travis-ci.org/croqaz/uk-postcode-lib) ![Python 3.5](https://img.shields.io/badge/python-3.5-blue.svg) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 #### Simple UK post-code validation and formatting.
 
