@@ -71,7 +71,7 @@ def format_code(code: str, join: bool=True):
     """
     # Minimum size is A99AA, 5 letters
     # Maximum size is DN55 1PT, 8 letters
-    if len(code) < 5 and len(code) > 9:
+    if len(code) < 5 or len(code) > 9:
         raise ValidationError('Code length "{}" is invalid'.format(len(code)))
     code = code.upper()
     # From start up to the last 3 letters
